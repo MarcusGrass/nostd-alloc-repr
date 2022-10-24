@@ -1,0 +1,11 @@
+[package]
+name = "no_std"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dlmalloc = { git = "https://github.com/MarcusGrass/dlmalloc-rs.git", rev = "a8e9fc0d2c03a06810530a48abd37fecc71e8109", default-features = false}
+sc = "0.2.7"
+unix-print = {git = "https://github.com/MarcusGrass/unix-print.git", branch = "main"}

@@ -1,0 +1,14 @@
+[profile.lto]
+panic = "abort"
+codegen-units = 1 # Better optimization
+debug = false # Inherits from release so should actually do nothing but whatever
+inherits = "release"
+lto = true # link time optimization
+strip = true # smaller binary
+
+[target.'cfg(all())']
+rustflags = [
+    "-C", "link-arg=-fuse-ld=lld",
+    "-C", "link-arg=-nostartfiles",
+
+]
